@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math/rand"
 	"os"
 	"runtime"
 	"time"
@@ -38,7 +39,12 @@ func printHello() {
 	green := color.New(color.FgGreen).SprintFunc()
 	bold := color.New(color.Bold).SprintFunc()
 
-	fmt.Printf("\n%s, %s!\n", green("Hello World"), bold("Gopher"))
+	// Random greetings
+	greetings := []string{"Hello", "Howdy", "Ahoy", "Salut", "Ciao", "Hola"}
+	rand.Seed(time.Now().UnixNano())
+	greet := greetings[rand.Intn(len(greetings))]
+
+	fmt.Printf("\n%s %s, %s!\n", green(greet), green("World"), bold("Gopher"))
 
 	// System info
 	fmt.Println("Running on:", runtime.GOOS, runtime.GOARCH)
