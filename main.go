@@ -37,6 +37,7 @@ func printHello() {
 
 	// Colored output
 	green := color.New(color.FgGreen).SprintFunc()
+	red := color.New(color.FgRed).SprintFunc()
 	bold := color.New(color.Bold).SprintFunc()
 
 	// Random greetings
@@ -44,7 +45,7 @@ func printHello() {
 	rand.Seed(time.Now().UnixNano())
 	greet := greetings[rand.Intn(len(greetings))]
 
-	fmt.Printf("\n%s %s, %s!\n", green(greet), green("World"), bold("Gopher"))
+	fmt.Printf("\n%s %s, %s!\n", red(greet), green("World"), bold("Gopher"))
 
 	// System info
 	fmt.Println("Running on:", runtime.GOOS, runtime.GOARCH)
