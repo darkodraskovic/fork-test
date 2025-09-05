@@ -38,7 +38,7 @@ func printHello() {
 	green := color.New(color.FgGreen).SprintFunc()
 	bold := color.New(color.Bold).SprintFunc()
 
-	fmt.Printf("\n%s, %s!\n", green("Hello World"), bold("Gopher"))
+	fmt.Printf("\n%s, %s!\n", green("Hello World! Zzz..."), bold("Gopher"))
 
 	// System info
 	fmt.Println("Running on:", runtime.GOOS, runtime.GOARCH)
